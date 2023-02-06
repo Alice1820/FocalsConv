@@ -8,6 +8,7 @@ class PyramidFeat2D(nn.Module):
     def __init__(self, optimize, model_cfg):
         """
         Initialize 2D feature network via pretrained model
+        2D backbone
         Args:
             model_cfg: EasyDict, Dense classification network config
         """
