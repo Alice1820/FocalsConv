@@ -40,6 +40,13 @@ def model_fn_decorator():
     def model_func(model, batch_dict):
         load_data_to_gpu(batch_dict)
         ret_dict, tb_dict, disp_dict = model(batch_dict)
+        # ret_dict, tb_dict, disp_dict, pred_dict, recall_dict = model(batch_dict)
+
+        # print (ret_dict.keys()) # 'loss'
+        # print (tb_dict.keys()) # 'loss'
+        # print (disp_dict.keys()) # 'loss'
+        # print (pred_dict.keys())
+        # exit()
 
         loss = ret_dict['loss'].mean()
         if hasattr(model, 'update_global_step'):

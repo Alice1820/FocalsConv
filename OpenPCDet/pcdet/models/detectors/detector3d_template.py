@@ -268,11 +268,11 @@ class Detector3DTemplate(nn.Module):
                 final_labels = label_preds[selected]
                 final_boxes = box_preds[selected]
 
-            recall_dict = self.generate_recall_record(
-                box_preds=final_boxes if 'rois' not in batch_dict else src_box_preds,
-                recall_dict=recall_dict, batch_index=index, data_dict=batch_dict,
-                thresh_list=post_process_cfg.RECALL_THRESH_LIST
-            )
+            # recall_dict = self.generate_recall_record(
+            #     box_preds=final_boxes if 'rois' not in batch_dict else src_box_preds,
+            #     recall_dict=recall_dict, batch_index=index, data_dict=batch_dict,
+            #     thresh_list=post_process_cfg.RECALL_THRESH_LIST
+            # )
 
             record_dict = {
                 'pred_boxes': final_boxes,
